@@ -28,5 +28,9 @@ python train.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/sa
 ```
 6. Generate captions for test images
 ```
-python eval.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/save/encoder> --image_dir <path/to/downloaded/images> --caption_path <path/to/saved/train/descriptions/in/step 3> --test_caption_path <path/to/saved/test/descriptions/in/step 3> --test_index <index/of/image/to/generate/caption/for/from/test/images>
+python test.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/save/encoder> --image_dir <path/to/downloaded/images> --caption_path <path/to/saved/train/descriptions/in/step 3> --test_caption_path <path/to/saved/test/descriptions/in/step 3> --test_index <index/of/image/to/generate/caption/for/from/test/images>
+```
+7. Evaluate Model on all test images. Outputs are METEOR, NIST, TER, ROUGE, and ACCURACY scores
+```
+python evaluate.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/save/encoder> --image_dir <path/to/downloaded/images> --caption_path <path/to/saved/train/descriptions/in/step 3> --test_caption_path <path/to/saved/test/descriptions/in/step 3>
 ```
