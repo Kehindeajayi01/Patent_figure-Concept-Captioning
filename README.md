@@ -10,7 +10,7 @@
 git clone git@github.com:lamps-lab/Patent-figure-concept-captioning.git
 cd Patent-figure-concept-captioning/
 ```
-2. Download the design patent dataset using the link below and extract the images
+2. Download the design patent dataset using the link below and extract the images. Each year folder contains the original compound images, segmented images, and json file containing metadata of the segmented patent figures. 
 ```
 https://drive.google.com/drive/u/1/folders/1bzUWpix1MrZtCYx42wxx3QZrQfyNT0rC
 ```
