@@ -10,7 +10,7 @@
 git clone git@github.com:lamps-lab/Patent-figure-concept-captioning.git
 cd Patent-figure-concept-captioning/
 ```
-2. Download the design patent dataset using the link below
+2. Download the design patent dataset using the link below and extract the images
 ```
 https://drive.google.com/drive/u/1/folders/1bzUWpix1MrZtCYx42wxx3QZrQfyNT0rC
 ```
@@ -21,4 +21,12 @@ python data.py --json segmentation_2007.json --output_dir <path/to/save/training
 4. Resize training images for the ResNet-152 pretrained model. The resized images will be used for training
 ```
 python resize.py --image_dir <path/to/training/images> --output_dir <path/to/save/resized/images>
+```
+5. Train the concept captioning network
+```
+python train.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/save/encoder> --image_dir <path/to/resized/images> --caption_path <path/to/saved/train/descriptions/in/step 3> --num_epochs <default/is/10> 
+```
+6. Generate captions for test images
+```
+python eval.py --decoder_path <path/to/save/decoder> --encoder_path <path/to/save/encoder> --image_dir <path/to/downloaded/images> --caption_path <path/to/saved/train/descriptions/in/step 3> --test_caption_path <path/to/saved/test/descriptions/in/step 3> --test_index <index/of/image/to/generate/caption/for/from/test/images>
 ```
